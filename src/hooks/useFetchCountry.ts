@@ -8,7 +8,7 @@ export const useFetchCountry = async (name: string, capital: string) => {
 			},
 			next: { revalidate: 60 }
 		});
-
+		``;
 		if (!response.ok || response.status === 404) return;
 
 		const data = await response.json();

@@ -23,7 +23,6 @@ import returnFullNamesBorder from '../utils/border-fullnames-countries';
 // };
 
 export const useFetchCountry = async (name: string, capital: string) => {
-	console.log('charizard');
 	try {
 		const response = await fetch(API_URL.countriesByName(name));
 
@@ -38,7 +37,6 @@ export const useFetchCountry = async (name: string, capital: string) => {
 		});
 
 		const fullNameBorders = await returnFullNamesBorder(borders);
-		console.log(borders);
 
 		if (!fullNameBorders || fullNameBorders.length === 0) return;
 
@@ -74,6 +72,6 @@ export const useFetchCountry = async (name: string, capital: string) => {
 
 		return countryDataReturn;
 	} catch (err) {
-		console.log(err);
+		throw new Error('Error into access to a specific country');
 	}
 };

@@ -2,8 +2,6 @@ import { API_URL } from '../config/config-url-api';
 import { CountriesProps } from '../types/countries-types';
 
 export const useFetchCountries = async () => {
-	console.log('charmander');
-
 	try {
 		const response = await fetch(API_URL.allCountries(), {
 			method: 'GET',
